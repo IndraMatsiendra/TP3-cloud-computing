@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  REDIS_OUTPUT_KEY: etelvinaoliveira-proj3-output
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-12-12T18:06:28Z"
+  name: outputkey
+  namespace: etelvinaoliveira
+  resourceVersion: "4380527"
+  uid: cb098a17-7f77-4e33-b5d4-ea45d7ef713e
