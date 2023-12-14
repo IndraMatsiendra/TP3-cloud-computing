@@ -5,8 +5,9 @@ data:
     sys.path.append("/home/etelvinaoliveira")
 
     def handler(input_dict, context):
-      outgoing_traffic_bytes = input_dict['net_io_counters_eth0-bytes_recv'] / (input_dict['net_io_counters_eth0-bytes_sent'] + input_dict['net_io_counters_eth0-bytes_recv'])
-      percentage_memory_caching_content = percentage_memory_caching_content = (input_dict['virtual_memory-buffers'] + input_dict['virtual_memory-cached']) /(input_dict['virtual_memory-total'])
+      outgoing_traffic_bytes = input_dict['net_io_counters_eth0-bytes_sent'] / (input_dict['net_io_counters_eth0-bytes_sent'] + input_dict['net_io_counters_eth0-bytes_recv'])
+
+      percentage_memory_caching_content = (input_dict['virtual_memory-buffers'] + input_dict['virtual_memory-cached']) /(input_dict['virtual_memory-total'])
 
 
       percents = []
@@ -37,8 +38,8 @@ data:
       return dictResult
 kind: ConfigMap
 metadata:
-  creationTimestamp: "2023-12-14T04:07:07Z"
+  creationTimestamp: "2023-12-14T05:03:02Z"
   name: pyfile
   namespace: etelvinaoliveira
-  resourceVersion: "4582602"
-  uid: b90f1909-aa0d-4d68-b4dd-b30170cea281
+  resourceVersion: "4588098"
+  uid: 16538924-1689-4b0d-ad77-a24595b69f93
