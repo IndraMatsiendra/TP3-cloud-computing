@@ -38,7 +38,7 @@ spec:
               name: outputkey
               key: REDIS_OUTPUT_KEY
       - name: etelvinaoliveira-dashbord
-        image: docker.io/indramatsiendra/dashboard:1.0.1
+        image: docker.io/indramatsiendra/dashboard:1.0.2
         ports:
            - containerPort: 32179
       volumes:

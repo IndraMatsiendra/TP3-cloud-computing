@@ -6,8 +6,8 @@ data:
 
     def handler(input_dict, context):
       outgoing_traffic_bytes = input_dict['net_io_counters_eth0-bytes_recv'] / (input_dict['net_io_counters_eth0-bytes_sent'] + input_dict['net_io_counters_eth0-bytes_recv'])
+      percentage_memory_caching_content = percentage_memory_caching_content = (input_dict['virtual_memory-buffers'] + input_dict['virtual_memory-cached']) /(input_dict['virtual_memory-total'])
 
-      percentage_memory_caching_content = (input_dict['virtual_memory-buffers'] + input_dict['virtual_memory-cached']) /(input_dict['virtual_memory-buffers'] + input_dict['virtual_memory-cached'] + input_dict['virtual_memory-slab'])
 
       percents = []
       dictResult = {}
@@ -22,6 +22,9 @@ data:
             context.env[f"list_{key}"] = [value]
           else:
             if len(context.env[f"list_{key}"]) < 12:
+              context.env[f"list_{key}"].append(value)
+            else:
+              context.env[f"list_{key}"][:10] = context.env[f"list_{key}"][1:]
               context.env[f"list_{key}"][11] = value
 
       for (key, value) in context.env.items():
@@ -34,8 +37,8 @@ data:
       return dictResult
 kind: ConfigMap
 metadata:
-  creationTimestamp: "2023-12-12T19:35:03Z"
+  creationTimestamp: "2023-12-14T04:07:07Z"
   name: pyfile
   namespace: etelvinaoliveira
-  resourceVersion: "4388740"
-  uid: de2e779a-0a1e-463e-8129-7ff62e2084c3
+  resourceVersion: "4582602"
+  uid: b90f1909-aa0d-4d68-b4dd-b30170cea281
