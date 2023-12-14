@@ -52,7 +52,7 @@ def update_graph(interval, selectedCPU):
     y_data = graph_data[selectedCPU]
 
     df = pd.DataFrame({'X': x_data, 'Y': y_data})
-    fig = px.line(df, x='X', y='Y', title=f'CPU Usage - {selectedCPU}') #x='timestamp', y='usage' --> depois
+    fig = px.line(df, x='X', y='Y', title=f'Monitoring - {selectedCPU}') #x='timestamp', y='usage' --> depois
 
     return fig, [{'label': cpu, 'value': cpu} for cpu, value in graph_data.items()]
 
