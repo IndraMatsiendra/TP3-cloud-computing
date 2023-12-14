@@ -2,7 +2,7 @@ import sys
 sys.path.append("/home/etelvinaoliveira")
 
 def handler(input_dict, context):
-  outgoing_traffic_bytes = input_dict['net_io_counters_eth0-bytes_recv'] / (input_dict['net_io_counters_eth0-bytes_sent'] + input_dict['net_io_counters_eth0-bytes_recv'])
+  outgoing_traffic_bytes = input_dict['net_io_counters_eth0-bytes_sent'] / (input_dict['net_io_counters_eth0-bytes_sent'] + input_dict['net_io_counters_eth0-bytes_recv'])
 
   percentage_memory_caching_content = (input_dict['virtual_memory-buffers'] + input_dict['virtual_memory-cached']) /(input['virtual_memory-total'])
 
