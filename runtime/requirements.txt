@@ -1,0 +1,7 @@
+redis
+pandas
+numpy
+matplotlib
+requests
+scikit-learn
+tqdm
